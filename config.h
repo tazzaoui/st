@@ -11,8 +11,8 @@
 static char *font = TERMINUS12; 
 static int borderpx = 2;
 
-// Transparency value
-unsigned int alpha = 0xff;
+// bg transparency (0xff = opaque)
+unsigned int alpha = 0xcc;
 
 /*
  * What program is execed by st depends of these precedence rules:
