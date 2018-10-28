@@ -5,8 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+#define TERMINUS12 "xos4 Terminus:style=Regular:size=12"
+#define MONO10 "monospace:size=10"
+
+static char *font = TERMINUS12; 
 static int borderpx = 2;
+
+// Transparency value
+unsigned int alpha = 0xff;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -16,7 +22,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -63,7 +69,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color"; //"st-256color";
 
 /*
  * spaces per tab
@@ -81,9 +87,6 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
-
-/* bg opacity */
-unsigned int alpha = 0xcc;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -111,8 +114,8 @@ static const char *colorname[] = {
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
-	"#555555",
-	"black",
+	"#ffffff",
+    "#111111",
 };
 
 
@@ -120,8 +123,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 257;
+unsigned int defaultfg = 255;
+unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -132,7 +135,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
