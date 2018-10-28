@@ -11,7 +11,7 @@
 static char *font = TERMINUS12; 
 static int borderpx = 2;
 
-// bg transparency (0xff = opaque)
+// bg transparency (0xff = opaque, 0x00 = transparent)
 unsigned int alpha = 0xcc;
 
 /*
